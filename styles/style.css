@@ -1,0 +1,47 @@
+/* Reset default styles */
+
+:root {
+ --primaria:  #007bff;
+ --secundaria: #6E4529;
+ --titulos: #b91616;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add your custom styles here */
+body {
+    background-color: var(--primaria);
+    box-sizing: border-box;
+    color: var(--secundaria);
+}
+
+h1 {
+    color: var(--secundaria);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+pe{
+    padding: 26px;
+    color: #666;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Add more styles as needed */
