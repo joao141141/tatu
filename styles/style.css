@@ -2,7 +2,7 @@
 
 :root {
     --cor-primaria: #6e4529;
-    --cor-secundaria: #430244;
+    --cor-secundaria: #43;
     --cor-terciaria: #a56c45;
     --cor-hover: #EEEEEE;
 
@@ -47,44 +47,45 @@ body {
 }
 
 .menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Começa fora da tela */
+    height: 100%;
+    width: 250px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-hover);
+    transition: right 0.6s ease; /* Animação de deslizamento */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 #menu-toggle:checked ~ .menu {
-    display: block;
-    position: absolute;
-    background-color: var(--cor-primaria);
-    top: 60px; /* Ajuste conforme necessário */
-    right: 20px; /* Ajuste conforme necessário */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Ajuste conforme necessário */
-    z-index: 10;
+    right: 0; /* Menu visível */
 }
 
 .menu ul {
     list-style-type: none;
-    padding: 0;
+    padding: 60px 20px; /* Espaçamento interno */
     margin: 0;
 }
 
 .menu ul li {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .menu ul li a {
     text-decoration: none;
-    color: var(--cor-terciaria);
+    color: var(--cor-hover);
     font-size: 1.5rem;
     font-family: var(--fonte-monteserrat);
     font-weight: 600;
-    padding: 10px 20px;
     display: block;
     transition: color 1s;
 }
 
 .menu ul li a:hover,
 .menu ul li a:focus {
-    color: var(--cor-hover);
+    color: var(--cor-terciaria);
 }
 
 .cabecalho__menu__link {
@@ -204,8 +205,5 @@ body {
     }
     .menu-icon {
         display: block; /* Exibe o ícone do menu hambúrguer em telas menores */
-    }
-    .menu {
-        display: block; /* Exibe o menu ao clicar no ícone */
     }
 }
