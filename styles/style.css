@@ -2,7 +2,7 @@
 
 :root {
     --cor-primaria: #6e4529;
-    --cor-secundaria: #43;
+    --cor-secundaria: #ffffff; /* Corrigi para um valor válido */
     --cor-terciaria: #a56c45;
     --cor-hover: #EEEEEE;
 
@@ -13,16 +13,25 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
+    font-family: var(--fonte-monteserrat);
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .cabecalho {
-    padding: 2% 0 0 10%;
+    width: 100%;
+    background-color: var(--cor-terciaria);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -30,7 +39,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 80px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .menu-icon {
@@ -38,7 +48,7 @@ body {
 }
 
 .menu-icon img {
-    width: 30px; /* Ajuste o tamanho da imagem conforme necessário */
+    width: 200px;
     height: auto;
 }
 
@@ -49,24 +59,24 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    right: -250px; /* Começa fora da tela */
+    right: -250px;
     height: 100%;
     width: 250px;
     background-color: var(--cor-primaria);
-    color: var(--cor-hover);
-    transition: right 0.6s ease; /* Animação de deslizamento */
+    color: var(--cor-secundaria);
+    transition: right 0.6s ease;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    padding-top: 60px; /* Espaçamento para o menu */
 }
 
 #menu-toggle:checked ~ .menu {
-    right: 0; /* Menu visível */
+    right: 0;
 }
 
 .menu ul {
     list-style-type: none;
-    padding: 60px 20px; /* Espaçamento interno */
-    margin: 0;
+    padding: 0;
 }
 
 .menu ul li {
@@ -81,6 +91,7 @@ body {
     font-weight: 600;
     display: block;
     transition: color 1s;
+    padding: 10px 20px;
 }
 
 .menu ul li a:hover,
@@ -88,91 +99,30 @@ body {
     color: var(--cor-terciaria);
 }
 
-.cabecalho__menu__link {
-    color: var(--cor-terciaria);
-    font-family: var(--fonte-monteserrat);
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 1s;
-}
-
-.cabecalho__menu__link:hover,
-.cabecalho__menu__link:focus {
-    color: var(--cor-hover);
-}
-
-.titulo-destaque {
-    color: var(--cor-terciaria);
-}
-
-.apresentacao {
-    padding: 5% 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 82px;
-}
-
-.apresentacao__conteudo {
-    width: 50%;
+.main-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-}
-
-.apresentacao__conteudo__titulo {
-    font-size: 2.25rem;
-    font-family: var(--fonte-krona);
-}
-
-.apresentacao__conteudo__texto {
-    font-size: 1.5rem;
-    font-family: var(--fonte-monteserrat);
-}
-
-.apresentacao__links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-}
-
-.apresentacao__links__subtitulo {
-    font-family: var(--fonte-krona);
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-.apresentacao__links__navegacao {
-    display: flex;
     justify-content: center;
-    gap: 16px;
-    border: 2px solid var(--cor-terciaria);
-    width: 50%;
+    align-items: center;
     text-align: center;
-    border-radius: 8px;
+    padding: 20px;
+}
+
+.home {
+    font-family: var(--fonte-krona);
+    font-size: 2.5rem;
+    color: var(--cor-hover);
+    margin-bottom: 1rem;
+}
+
+#Sobre {
     font-size: 1.5rem;
-    font-weight: 600;
-    padding: 21.5px 0;
-    text-decoration: none;
-    color: #F6F6F6;
     font-family: var(--fonte-monteserrat);
-    transition: background-color 1s, color 1s;
+    color: var(--cor-secundaria);
 }
 
-.apresentacao__links__navegacao:hover,
-.apresentacao__links__navegacao:focus {
-    background-color: var(--cor-hover);
-    color: var(--cor-terciaria);
-}
-
-.apresentacao__imagem {
-    width: 40%;
-}
-
-.rodape {
+.Tatu-A-Pe {
     padding: 26px;
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
@@ -180,30 +130,14 @@ body {
     font-family: var(--fonte-monteserrat);
     font-size: 1.5rem;
     font-weight: 400;
-    width: auto;
-}
-
-@media (max-width: 1200px) {
-    .cabecalho {
-        padding: 10%;
-    }
-    .cabecalho__menu {
-        justify-content: center;
-    }
-    .apresentacao {
-        flex-direction: column-reverse;
-        padding: 5%;
-    }
-    .apresentacao__conteudo {
-        width: auto;
-    }
+    width: 100%;
 }
 
 @media (max-width: 768px) {
     .cabecalho__menu {
-        display: none; /* Oculta o menu padrão em telas menores */
+        display: none;
     }
     .menu-icon {
-        display: block; /* Exibe o ícone do menu hambúrguer em telas menores */
+        display: block;
     }
 }
