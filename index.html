@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charst="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tatu</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <title>My Webpage</title>
 </head>
 <body>
     <header class="cabecalho">
         <nav class="cabecalho_menu">
-            <nav class="cabecalho__menu">
-                <a class="cabecalho__menu__link" href="#">Home</a>
-                <a class="cabecalho__menu__link" href="#">Sobre</a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <img src=".\assets\Sem título-1.png" alt="Menu">
+            </label>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#Sobre">Sobre</a></li>
+                </ul>
             </nav>
         </nav>
     </header>
     <h1 class="Home">Welcome to My Webpage</h1>
     
-    <p>This is a sample paragraph.</p>
+    <p id="Sobre">This is a sample paragraph.</p>
     
     <footer class="Tatu-A-Pe">
         &copy; 2024 Tatu-A-Pe. All rights reserved.
