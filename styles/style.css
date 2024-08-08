@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
 :root {
@@ -6,6 +7,7 @@
     --cor-terciaria: #a56c45;
     --cor-hover: #EEEEEE;
 
+    --fonte-alatsi: 'Alatsi', sans-serif;
     --fonte-krona: 'Krona One', sans-serif;
     --fonte-montserrat: 'Montserrat', sans-serif;
 }
@@ -16,6 +18,17 @@
     box-sizing: border-box;
 }
 
+/* Animação de fade-in para o carregamento da página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplicar a animação ao corpo da página */
 body {
     font-family: var(--fonte-montserrat);
     background-color: var(--cor-primaria);
@@ -23,15 +36,17 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
-.cabecalho {
+header.cabecalho {
     width: 100%;
-    height: 80px; /* Ajuste conforme necessário */
+    height: 100px;
     background-color: var(--cor-terciaria);
     display: flex;
     align-items: center;
-    padding: 0 20px; /* Adiciona algum espaçamento nas laterais */
+    padding: 0 20px;
 }
 
 .cabecalho_content {
@@ -39,40 +54,33 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Centraliza o conteúdo dentro do cabeçalho */
 }
 
 .site-title {
-    font-family: var(--fonte-krona);
-    font-size: 2rem;
+    font-family: var(--fonte-alatsi);
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 115.2px;
+    text-align: left;
     color: var(--cor-secundaria);
 }
 
-.nav-links {
-    display: flex;
-}
-
 .nav-links ul {
-    display: flex;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
 }
 
 .nav-links ul li {
-    margin: 0 15px; /* Espaçamento entre os links */
+    margin-left: 20px;
 }
 
 .nav-links ul li a {
     text-decoration: none;
     color: var(--cor-secundaria);
-    font-size: 1.2rem;
     font-family: var(--fonte-montserrat);
     font-weight: 600;
-    display: block;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
-    padding: 10px 0;
 }
 
 .nav-links ul li a:hover,
@@ -81,23 +89,34 @@ body {
 }
 
 section {
-    padding: 20px;
+    padding: 40px;
+    text-align: left;
 }
 
-.home {
-    font-family: var(--fonte-krona);
-    font-size: 2.5rem;
-    color: var(--cor-secundaria);
-    margin-bottom: 1rem;
+section h1, section h2 {
+    font-family: var(--fonte-alatsi);
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 115.2px;
+    text-align: left;
 }
 
-#Sobre {
-    font-size: 1.5rem;
-    font-family: var(--fonte-montserrat);
-    color: var(--cor-secundaria);
+section p {
+    font-family: var(--fonte-alatsi);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38.4px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.Tatu-A-Pe {
+.section-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+footer.Tatu-A-Pe {
     padding: 26px;
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
